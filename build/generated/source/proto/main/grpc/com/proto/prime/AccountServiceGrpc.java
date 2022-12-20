@@ -15,35 +15,35 @@ public final class AccountServiceGrpc {
   public static final String SERVICE_NAME = "AccountService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<com.proto.prime.RegisterRequest,
-      com.proto.prime.RegisterResponse> getRegisterMethod;
+  private static volatile io.grpc.MethodDescriptor<com.proto.prime.SignUpRequest,
+      com.proto.prime.SignUpResponse> getSignUpMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "Register",
-      requestType = com.proto.prime.RegisterRequest.class,
-      responseType = com.proto.prime.RegisterResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "SignUp",
+      requestType = com.proto.prime.SignUpRequest.class,
+      responseType = com.proto.prime.SignUpResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.proto.prime.RegisterRequest,
-      com.proto.prime.RegisterResponse> getRegisterMethod() {
-    io.grpc.MethodDescriptor<com.proto.prime.RegisterRequest, com.proto.prime.RegisterResponse> getRegisterMethod;
-    if ((getRegisterMethod = AccountServiceGrpc.getRegisterMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.proto.prime.SignUpRequest,
+      com.proto.prime.SignUpResponse> getSignUpMethod() {
+    io.grpc.MethodDescriptor<com.proto.prime.SignUpRequest, com.proto.prime.SignUpResponse> getSignUpMethod;
+    if ((getSignUpMethod = AccountServiceGrpc.getSignUpMethod) == null) {
       synchronized (AccountServiceGrpc.class) {
-        if ((getRegisterMethod = AccountServiceGrpc.getRegisterMethod) == null) {
-          AccountServiceGrpc.getRegisterMethod = getRegisterMethod =
-              io.grpc.MethodDescriptor.<com.proto.prime.RegisterRequest, com.proto.prime.RegisterResponse>newBuilder()
+        if ((getSignUpMethod = AccountServiceGrpc.getSignUpMethod) == null) {
+          AccountServiceGrpc.getSignUpMethod = getSignUpMethod =
+              io.grpc.MethodDescriptor.<com.proto.prime.SignUpRequest, com.proto.prime.SignUpResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Register"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SignUp"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.proto.prime.RegisterRequest.getDefaultInstance()))
+                  com.proto.prime.SignUpRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.proto.prime.RegisterResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new AccountServiceMethodDescriptorSupplier("Register"))
+                  com.proto.prime.SignUpResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new AccountServiceMethodDescriptorSupplier("SignUp"))
               .build();
         }
       }
     }
-    return getRegisterMethod;
+    return getSignUpMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.proto.prime.SignInRequest,
@@ -158,9 +158,9 @@ public final class AccountServiceGrpc {
 
     /**
      */
-    public void register(com.proto.prime.RegisterRequest request,
-        io.grpc.stub.StreamObserver<com.proto.prime.RegisterResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRegisterMethod(), responseObserver);
+    public void signUp(com.proto.prime.SignUpRequest request,
+        io.grpc.stub.StreamObserver<com.proto.prime.SignUpResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSignUpMethod(), responseObserver);
     }
 
     /**
@@ -180,12 +180,12 @@ public final class AccountServiceGrpc {
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-            getRegisterMethod(),
+            getSignUpMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
-                com.proto.prime.RegisterRequest,
-                com.proto.prime.RegisterResponse>(
-                  this, METHODID_REGISTER)))
+                com.proto.prime.SignUpRequest,
+                com.proto.prime.SignUpResponse>(
+                  this, METHODID_SIGN_UP)))
           .addMethod(
             getSignInMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -220,10 +220,10 @@ public final class AccountServiceGrpc {
 
     /**
      */
-    public void register(com.proto.prime.RegisterRequest request,
-        io.grpc.stub.StreamObserver<com.proto.prime.RegisterResponse> responseObserver) {
+    public void signUp(com.proto.prime.SignUpRequest request,
+        io.grpc.stub.StreamObserver<com.proto.prime.SignUpResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getRegisterMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getSignUpMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -259,9 +259,9 @@ public final class AccountServiceGrpc {
 
     /**
      */
-    public com.proto.prime.RegisterResponse register(com.proto.prime.RegisterRequest request) {
+    public com.proto.prime.SignUpResponse signUp(com.proto.prime.SignUpRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getRegisterMethod(), getCallOptions(), request);
+          getChannel(), getSignUpMethod(), getCallOptions(), request);
     }
 
     /**
@@ -295,10 +295,10 @@ public final class AccountServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.proto.prime.RegisterResponse> register(
-        com.proto.prime.RegisterRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<com.proto.prime.SignUpResponse> signUp(
+        com.proto.prime.SignUpRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getRegisterMethod(), getCallOptions()), request);
+          getChannel().newCall(getSignUpMethod(), getCallOptions()), request);
     }
 
     /**
@@ -318,7 +318,7 @@ public final class AccountServiceGrpc {
     }
   }
 
-  private static final int METHODID_REGISTER = 0;
+  private static final int METHODID_SIGN_UP = 0;
   private static final int METHODID_SIGN_IN = 1;
   private static final int METHODID_GET_ACCOUNTS = 2;
 
@@ -339,9 +339,9 @@ public final class AccountServiceGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_REGISTER:
-          serviceImpl.register((com.proto.prime.RegisterRequest) request,
-              (io.grpc.stub.StreamObserver<com.proto.prime.RegisterResponse>) responseObserver);
+        case METHODID_SIGN_UP:
+          serviceImpl.signUp((com.proto.prime.SignUpRequest) request,
+              (io.grpc.stub.StreamObserver<com.proto.prime.SignUpResponse>) responseObserver);
           break;
         case METHODID_SIGN_IN:
           serviceImpl.signIn((com.proto.prime.SignInRequest) request,
@@ -412,7 +412,7 @@ public final class AccountServiceGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new AccountServiceFileDescriptorSupplier())
-              .addMethod(getRegisterMethod())
+              .addMethod(getSignUpMethod())
               .addMethod(getSignInMethod())
               .addMethod(getGetAccountsMethod())
               .build();

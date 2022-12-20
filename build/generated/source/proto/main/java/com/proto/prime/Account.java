@@ -25,15 +25,15 @@ public final class Account {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_GetAccountsResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_RegisterRequest_descriptor;
+    internal_static_SignUpRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_RegisterRequest_fieldAccessorTable;
+      internal_static_SignUpRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_RegisterResponse_descriptor;
+    internal_static_SignUpResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_RegisterResponse_fieldAccessorTable;
+      internal_static_SignUpResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_SignInRequest_descriptor;
   static final 
@@ -55,16 +55,18 @@ public final class Account {
     java.lang.String[] descriptorData = {
       "\n\rAccount.proto\"8\n\022GetAccountsRequest\022\020\n" +
       "\010username\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\"(\n\023Get" +
-      "AccountsResponse\022\021\n\tisSuccess\030\001 \001(\010\"\021\n\017R" +
-      "egisterRequest\"\022\n\020RegisterResponse\"3\n\rSi" +
-      "gnInRequest\022\020\n\010username\030\001 \001(\t\022\020\n\010passwor" +
-      "d\030\002 \001(\t\"#\n\016SignInResponse\022\021\n\tisSuccess\030\001" +
-      " \001(\0102\254\001\n\016AccountService\0221\n\010Register\022\020.Re" +
-      "gisterRequest\032\021.RegisterResponse\"\000\022+\n\006Si" +
-      "gnIn\022\016.SignInRequest\032\017.SignInResponse\"\000\022" +
-      ":\n\013getAccounts\022\023.GetAccountsRequest\032\024.Ge" +
-      "tAccountsResponse\"\000B\023\n\017com.proto.primeP\001" +
-      "b\006proto3"
+      "AccountsResponse\022\021\n\tisSuccess\030\001 \001(\010\"g\n\rS" +
+      "ignUpRequest\022\020\n\010username\030\001 \001(\t\022\020\n\010passwo" +
+      "rd\030\002 \001(\t\022\021\n\tfirstName\030\004 \001(\t\022\020\n\010lastName\030" +
+      "\005 \001(\t\022\r\n\005phone\030\006 \001(\t\"#\n\016SignUpResponse\022\021" +
+      "\n\tisSuccess\030\001 \001(\010\"3\n\rSignInRequest\022\020\n\010us" +
+      "ername\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\"#\n\016SignIn" +
+      "Response\022\021\n\tisSuccess\030\001 \001(\0102\246\001\n\016AccountS" +
+      "ervice\022+\n\006SignUp\022\016.SignUpRequest\032\017.SignU" +
+      "pResponse\"\000\022+\n\006SignIn\022\016.SignInRequest\032\017." +
+      "SignInResponse\"\000\022:\n\013getAccounts\022\023.GetAcc" +
+      "ountsRequest\032\024.GetAccountsResponse\"\000B\023\n\017" +
+      "com.proto.primeP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -82,18 +84,18 @@ public final class Account {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GetAccountsResponse_descriptor,
         new java.lang.String[] { "IsSuccess", });
-    internal_static_RegisterRequest_descriptor =
+    internal_static_SignUpRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_RegisterRequest_fieldAccessorTable = new
+    internal_static_SignUpRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_RegisterRequest_descriptor,
-        new java.lang.String[] { });
-    internal_static_RegisterResponse_descriptor =
+        internal_static_SignUpRequest_descriptor,
+        new java.lang.String[] { "Username", "Password", "FirstName", "LastName", "Phone", });
+    internal_static_SignUpResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_RegisterResponse_fieldAccessorTable = new
+    internal_static_SignUpResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_RegisterResponse_descriptor,
-        new java.lang.String[] { });
+        internal_static_SignUpResponse_descriptor,
+        new java.lang.String[] { "IsSuccess", });
     internal_static_SignInRequest_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_SignInRequest_fieldAccessorTable = new

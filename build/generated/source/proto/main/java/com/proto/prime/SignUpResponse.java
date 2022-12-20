@@ -4,25 +4,25 @@
 package com.proto.prime;
 
 /**
- * Protobuf type {@code RegisterRequest}
+ * Protobuf type {@code SignUpResponse}
  */
-public final class RegisterRequest extends
+public final class SignUpResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:RegisterRequest)
-    RegisterRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:SignUpResponse)
+    SignUpResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use RegisterRequest.newBuilder() to construct.
-  private RegisterRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use SignUpResponse.newBuilder() to construct.
+  private SignUpResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private RegisterRequest() {
+  private SignUpResponse() {
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new RegisterRequest();
+    return new SignUpResponse();
   }
 
   @java.lang.Override
@@ -32,15 +32,26 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.proto.prime.Account.internal_static_RegisterRequest_descriptor;
+    return com.proto.prime.Account.internal_static_SignUpResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.proto.prime.Account.internal_static_RegisterRequest_fieldAccessorTable
+    return com.proto.prime.Account.internal_static_SignUpResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.proto.prime.RegisterRequest.class, com.proto.prime.RegisterRequest.Builder.class);
+            com.proto.prime.SignUpResponse.class, com.proto.prime.SignUpResponse.Builder.class);
+  }
+
+  public static final int ISSUCCESS_FIELD_NUMBER = 1;
+  private boolean isSuccess_;
+  /**
+   * <code>bool isSuccess = 1;</code>
+   * @return The isSuccess.
+   */
+  @java.lang.Override
+  public boolean getIsSuccess() {
+    return isSuccess_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -57,6 +68,9 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (isSuccess_ != false) {
+      output.writeBool(1, isSuccess_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -66,6 +80,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (isSuccess_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(1, isSuccess_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -76,11 +94,13 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.proto.prime.RegisterRequest)) {
+    if (!(obj instanceof com.proto.prime.SignUpResponse)) {
       return super.equals(obj);
     }
-    com.proto.prime.RegisterRequest other = (com.proto.prime.RegisterRequest) obj;
+    com.proto.prime.SignUpResponse other = (com.proto.prime.SignUpResponse) obj;
 
+    if (getIsSuccess()
+        != other.getIsSuccess()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -92,74 +112,77 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + ISSUCCESS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsSuccess());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.proto.prime.RegisterRequest parseFrom(
+  public static com.proto.prime.SignUpResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.proto.prime.RegisterRequest parseFrom(
+  public static com.proto.prime.SignUpResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.proto.prime.RegisterRequest parseFrom(
+  public static com.proto.prime.SignUpResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.proto.prime.RegisterRequest parseFrom(
+  public static com.proto.prime.SignUpResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.proto.prime.RegisterRequest parseFrom(byte[] data)
+  public static com.proto.prime.SignUpResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.proto.prime.RegisterRequest parseFrom(
+  public static com.proto.prime.SignUpResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.proto.prime.RegisterRequest parseFrom(java.io.InputStream input)
+  public static com.proto.prime.SignUpResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.proto.prime.RegisterRequest parseFrom(
+  public static com.proto.prime.SignUpResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.proto.prime.RegisterRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.proto.prime.SignUpResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.proto.prime.RegisterRequest parseDelimitedFrom(
+  public static com.proto.prime.SignUpResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.proto.prime.RegisterRequest parseFrom(
+  public static com.proto.prime.SignUpResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.proto.prime.RegisterRequest parseFrom(
+  public static com.proto.prime.SignUpResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -172,7 +195,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.proto.prime.RegisterRequest prototype) {
+  public static Builder newBuilder(com.proto.prime.SignUpResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -188,26 +211,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code RegisterRequest}
+   * Protobuf type {@code SignUpResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:RegisterRequest)
-      com.proto.prime.RegisterRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:SignUpResponse)
+      com.proto.prime.SignUpResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.proto.prime.Account.internal_static_RegisterRequest_descriptor;
+      return com.proto.prime.Account.internal_static_SignUpResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.proto.prime.Account.internal_static_RegisterRequest_fieldAccessorTable
+      return com.proto.prime.Account.internal_static_SignUpResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.proto.prime.RegisterRequest.class, com.proto.prime.RegisterRequest.Builder.class);
+              com.proto.prime.SignUpResponse.class, com.proto.prime.SignUpResponse.Builder.class);
     }
 
-    // Construct using com.proto.prime.RegisterRequest.newBuilder()
+    // Construct using com.proto.prime.SignUpResponse.newBuilder()
     private Builder() {
 
     }
@@ -220,23 +243,25 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      isSuccess_ = false;
+
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.proto.prime.Account.internal_static_RegisterRequest_descriptor;
+      return com.proto.prime.Account.internal_static_SignUpResponse_descriptor;
     }
 
     @java.lang.Override
-    public com.proto.prime.RegisterRequest getDefaultInstanceForType() {
-      return com.proto.prime.RegisterRequest.getDefaultInstance();
+    public com.proto.prime.SignUpResponse getDefaultInstanceForType() {
+      return com.proto.prime.SignUpResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.proto.prime.RegisterRequest build() {
-      com.proto.prime.RegisterRequest result = buildPartial();
+    public com.proto.prime.SignUpResponse build() {
+      com.proto.prime.SignUpResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -244,8 +269,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.proto.prime.RegisterRequest buildPartial() {
-      com.proto.prime.RegisterRequest result = new com.proto.prime.RegisterRequest(this);
+    public com.proto.prime.SignUpResponse buildPartial() {
+      com.proto.prime.SignUpResponse result = new com.proto.prime.SignUpResponse(this);
+      result.isSuccess_ = isSuccess_;
       onBuilt();
       return result;
     }
@@ -284,16 +310,19 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.proto.prime.RegisterRequest) {
-        return mergeFrom((com.proto.prime.RegisterRequest)other);
+      if (other instanceof com.proto.prime.SignUpResponse) {
+        return mergeFrom((com.proto.prime.SignUpResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.proto.prime.RegisterRequest other) {
-      if (other == com.proto.prime.RegisterRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.proto.prime.SignUpResponse other) {
+      if (other == com.proto.prime.SignUpResponse.getDefaultInstance()) return this;
+      if (other.getIsSuccess() != false) {
+        setIsSuccess(other.getIsSuccess());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -320,6 +349,11 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
+            case 8: {
+              isSuccess_ = input.readBool();
+
+              break;
+            } // case 8
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -335,6 +369,37 @@ private static final long serialVersionUID = 0L;
       } // finally
       return this;
     }
+
+    private boolean isSuccess_ ;
+    /**
+     * <code>bool isSuccess = 1;</code>
+     * @return The isSuccess.
+     */
+    @java.lang.Override
+    public boolean getIsSuccess() {
+      return isSuccess_;
+    }
+    /**
+     * <code>bool isSuccess = 1;</code>
+     * @param value The isSuccess to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsSuccess(boolean value) {
+      
+      isSuccess_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool isSuccess = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsSuccess() {
+      
+      isSuccess_ = false;
+      onChanged();
+      return this;
+    }
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -348,23 +413,23 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:RegisterRequest)
+    // @@protoc_insertion_point(builder_scope:SignUpResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:RegisterRequest)
-  private static final com.proto.prime.RegisterRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:SignUpResponse)
+  private static final com.proto.prime.SignUpResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.proto.prime.RegisterRequest();
+    DEFAULT_INSTANCE = new com.proto.prime.SignUpResponse();
   }
 
-  public static com.proto.prime.RegisterRequest getDefaultInstance() {
+  public static com.proto.prime.SignUpResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<RegisterRequest>
-      PARSER = new com.google.protobuf.AbstractParser<RegisterRequest>() {
+  private static final com.google.protobuf.Parser<SignUpResponse>
+      PARSER = new com.google.protobuf.AbstractParser<SignUpResponse>() {
     @java.lang.Override
-    public RegisterRequest parsePartialFrom(
+    public SignUpResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -383,17 +448,17 @@ private static final long serialVersionUID = 0L;
     }
   };
 
-  public static com.google.protobuf.Parser<RegisterRequest> parser() {
+  public static com.google.protobuf.Parser<SignUpResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<RegisterRequest> getParserForType() {
+  public com.google.protobuf.Parser<SignUpResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.proto.prime.RegisterRequest getDefaultInstanceForType() {
+  public com.proto.prime.SignUpResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

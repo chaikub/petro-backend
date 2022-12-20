@@ -51,6 +51,31 @@ public class AccountService extends AccountServiceGrpc.AccountServiceImplBase {
                 .setIsSuccess(isSuccess)
                 .build();
         responseObserver.onNext(response);
-        responseObserver.onCompleted();;
+        responseObserver.onCompleted();
+    }
+
+    @Override
+    public void signUp(SignUpRequest request, StreamObserver<SignUpResponse> responseObserver) {
+        boolean isSuccess = false;
+        try {
+            AccountEntity account = new AccountEntity();
+            account.setUsername(request.getUsername());
+            account.setPassword(request.getPassword());
+            account.setFirstName(request.getFirstName());
+            account.setLastName(request.getLastName());
+            account.setPhone(request.getPhone());
+            accountRepository.save(account);
+            System.out.println(account);
+            isSuccess = true;
+
+        }catch (Exception e){
+            System.out.println(e);
+            isSuccess = false;
+        }
+        SignUpResponse response = SignUpResponse.newBuilder()
+                .setIsSuccess(isSuccess)
+                .build();
+        responseObserver.onNext(response);
+        responseObserver.onCompleted();
     }
 }

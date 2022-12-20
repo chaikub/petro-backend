@@ -1,0 +1,45 @@
+syntax = "proto3";
+option java_package = "com.proto.prime";
+option java_multiple_files = true;
+
+//message Register{
+//  string username = 1;
+//  string password = 2;
+//  string firstName = 4;
+//  string lastName = 5;
+//  string phone = 6;
+//}
+//
+//message SignIn{
+//  string id = 1;
+//  string pass = 2;
+//}
+
+message GetAccountsRequest{
+  string username = 1;
+  string password = 2;
+
+}
+
+message GetAccountsResponse{
+  bool isSuccess = 1;
+}
+
+message RegisterRequest {}
+
+message RegisterResponse {}
+
+message SignInRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message SignInResponse {
+  bool isSuccess = 1;
+}
+
+service AccountService {
+  rpc Register(RegisterRequest) returns (RegisterResponse){};
+  rpc SignIn(SignInRequest) returns (SignInResponse){};
+  rpc getAccounts(GetAccountsRequest) returns (GetAccountsResponse){};
+}

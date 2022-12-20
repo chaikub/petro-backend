@@ -15,7 +15,11 @@ option java_multiple_files = true;
 //  string pass = 2;
 //}
 
-message GetAccountsRequest{}
+message GetAccountsRequest{
+  string username = 1;
+  string password = 2;
+
+}
 
 message GetAccountsResponse{
   bool isSuccess = 1;
@@ -25,9 +29,14 @@ message RegisterRequest {}
 
 message RegisterResponse {}
 
-message SignInRequest {}
+message SignInRequest {
+  string username = 1;
+  string password = 2;
+}
 
-message SignInResponse {}
+message SignInResponse {
+  bool isSuccess = 1;
+}
 
 service AccountService {
   rpc Register(RegisterRequest) returns (RegisterResponse){};

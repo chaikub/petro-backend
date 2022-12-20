@@ -8,5 +8,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface  AccountRepository extends MongoRepository<AccountEntity, String> {
     @Query(value = "{username: '?0'}")
-    AccountEntity findByUsername(String username);
+    public AccountEntity findByUsername(String username);
 }

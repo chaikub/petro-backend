@@ -14,19 +14,40 @@ public class AccountService extends AccountServiceGrpc.AccountServiceImplBase {
     @Autowired
     private AccountRepository accountRepository;
 
+//    @Override
+//    public void getAccounts(GetAccountsRequest request, StreamObserver<GetAccountsResponse> responseObserver) {
+//        boolean isSuccess = false;
+//        try {
+//            AccountEntity account = accountRepository.findByUsername(request.getUsername());
+//            if(account.getPassword().equals(request.getPassword())){
+//                isSuccess = true;
+//            }
+//            System.out.println(account);
+//        }catch (Exception e){
+//            System.out.println(e);
+//            isSuccess = false;
+//        }
+//        GetAccountsResponse response = GetAccountsResponse.newBuilder()
+//                .setIsSuccess(isSuccess)
+//                .build();
+//        responseObserver.onNext(response);
+//        responseObserver.onCompleted();;
+//    }
+
     @Override
-    public void getAccounts(GetAccountsRequest request, StreamObserver<GetAccountsResponse> responseObserver) {
-        boolean isSuccess = true;
+    public void signIn(SignInRequest request, StreamObserver<SignInResponse> responseObserver) {
+        boolean isSuccess = false;
         try {
-            List<AccountEntity> accounts = accountRepository.findAll();
-            for(AccountEntity account: accounts){
-                System.out.println("username : " + account.getUsername());
-                System.out.println("password : " + account.getPassword());
+            AccountEntity account = accountRepository.findByUsername(request.getUsername());
+            if(account.getPassword().equals(request.getPassword())){
+                isSuccess = true;
             }
+            System.out.println(account);
         }catch (Exception e){
+            System.out.println(e);
             isSuccess = false;
         }
-        GetAccountsResponse response = GetAccountsResponse.newBuilder()
+        SignInResponse response = SignInResponse.newBuilder()
                 .setIsSuccess(isSuccess)
                 .build();
         responseObserver.onNext(response);

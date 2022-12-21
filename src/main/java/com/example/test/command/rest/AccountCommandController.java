@@ -28,7 +28,7 @@ public class AccountCommandController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteBeer(@PathVariable String id) {
+    public void deleteAccount(@PathVariable String id) {
 //        beerService.deleteQuery(id);
     }
 }

@@ -2,7 +2,6 @@ package com.example.test.query.rest;
 
 
 import com.proto.prime.AccountServiceGrpc;
-import com.proto.prime.GetAccountsRequest;
 import com.proto.prime.SignInRequest;
 import io.grpc.ManagedChannel;
 import org.springframework.web.bind.annotation.*;
@@ -21,9 +20,10 @@ public class AccountQueryController {
        this.blockingStub = AccountServiceGrpc.newBlockingStub(channel);
    }
 
-    @GetMapping("/{username}/{password}")
-    public boolean SignIn(@PathVariable String username, @PathVariable String password){
-        SignInRequest signInRequest = SignInRequest.newBuilder().setUsername(username).setPassword(password).build();
+    @GetMapping
+    public boolean SignIn(@RequestBody SignInRestModel model){
+        System.out.println(model.getUsername());
+        SignInRequest signInRequest = SignInRequest.newBuilder().setUsername(model.getUsername()).setPassword(model.getPassword()).build();
         return blockingStub.signIn(signInRequest).getIsSuccess();
     }
 }

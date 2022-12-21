@@ -1,0 +1,26 @@
+syntax = "proto3";
+option java_package = "com.proto.prime";
+option java_multiple_files = true;
+
+message AddOilToFavoriteRequest {
+  string username = 1;
+  string name = 2;
+}
+
+message AddOilToFavoriteResponse {
+  bool isSuccess = 1;
+}
+
+message RemoveOilFromFavoriteRequest {
+  string username = 1;
+  string name = 2;
+}
+
+message RemoveOilFromFavoriteResponse {
+  bool isSuccess = 1;
+}
+
+service OilService{
+  rpc AddOilToFavorite(AddOilToFavoriteRequest) returns (AddOilToFavoriteResponse){};
+  rpc RemoveFavOil(RemoveOilFromFavoriteRequest) returns (RemoveOilFromFavoriteResponse){};
+}

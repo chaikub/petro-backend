@@ -18,9 +18,10 @@ public class AccountQueryController {
        this.blockingStub = AccountServiceGrpc.newBlockingStub(channel);
    }
 
-    @GetMapping("/{username}/{password}")
-    public boolean SignIn(@PathVariable String username, @PathVariable String password){
-        SignInRequest signInRequest = SignInRequest.newBuilder().setUsername(username).setPassword(password).build();
+    @GetMapping
+    public boolean SignIn(@RequestBody SignInRestModel model){
+        System.out.println(model.getUsername());
+        SignInRequest signInRequest = SignInRequest.newBuilder().setUsername(model.getUsername()).setPassword(model.getPassword()).build();
         return blockingStub.signIn(signInRequest).getIsSuccess();
     }
 }

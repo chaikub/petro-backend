@@ -72,6 +72,7 @@ public class AccountService extends AccountServiceGrpc.AccountServiceImplBase {
                 account.setFirstName(request.getFirstName());
                 account.setLastName(request.getLastName());
                 account.setPhone(request.getPhone());
+                account.setFavoil(request.getFavoilList());
                 accountRepository.save(account);
                 System.out.println(account);
                 isSuccess = true;

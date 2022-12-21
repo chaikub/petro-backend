@@ -55,18 +55,19 @@ public final class Account {
     java.lang.String[] descriptorData = {
       "\n\rAccount.proto\"8\n\022GetAccountsRequest\022\020\n" +
       "\010username\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\"(\n\023Get" +
-      "AccountsResponse\022\021\n\tisSuccess\030\001 \001(\010\"g\n\rS" +
+      "AccountsResponse\022\021\n\tisSuccess\030\001 \001(\010\"w\n\rS" +
       "ignUpRequest\022\020\n\010username\030\001 \001(\t\022\020\n\010passwo" +
       "rd\030\002 \001(\t\022\021\n\tfirstName\030\004 \001(\t\022\020\n\010lastName\030" +
-      "\005 \001(\t\022\r\n\005phone\030\006 \001(\t\"#\n\016SignUpResponse\022\021" +
-      "\n\tisSuccess\030\001 \001(\010\"3\n\rSignInRequest\022\020\n\010us" +
-      "ername\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\"#\n\016SignIn" +
-      "Response\022\021\n\tisSuccess\030\001 \001(\0102\246\001\n\016AccountS" +
-      "ervice\022+\n\006SignUp\022\016.SignUpRequest\032\017.SignU" +
-      "pResponse\"\000\022+\n\006SignIn\022\016.SignInRequest\032\017." +
-      "SignInResponse\"\000\022:\n\013getAccounts\022\023.GetAcc" +
-      "ountsRequest\032\024.GetAccountsResponse\"\000B\023\n\017" +
-      "com.proto.primeP\001b\006proto3"
+      "\005 \001(\t\022\r\n\005phone\030\006 \001(\t\022\016\n\006favoil\030\007 \003(\t\"#\n\016" +
+      "SignUpResponse\022\021\n\tisSuccess\030\001 \001(\010\"3\n\rSig" +
+      "nInRequest\022\020\n\010username\030\001 \001(\t\022\020\n\010password" +
+      "\030\002 \001(\t\"#\n\016SignInResponse\022\021\n\tisSuccess\030\001 " +
+      "\001(\0102\246\001\n\016AccountService\022+\n\006SignUp\022\016.SignU" +
+      "pRequest\032\017.SignUpResponse\"\000\022+\n\006SignIn\022\016." +
+      "SignInRequest\032\017.SignInResponse\"\000\022:\n\013getA" +
+      "ccounts\022\023.GetAccountsRequest\032\024.GetAccoun" +
+      "tsResponse\"\000B\023\n\017com.proto.primeP\001b\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -89,7 +90,7 @@ public final class Account {
     internal_static_SignUpRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SignUpRequest_descriptor,
-        new java.lang.String[] { "Username", "Password", "FirstName", "LastName", "Phone", });
+        new java.lang.String[] { "Username", "Password", "FirstName", "LastName", "Phone", "Favoil", });
     internal_static_SignUpResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_SignUpResponse_fieldAccessorTable = new

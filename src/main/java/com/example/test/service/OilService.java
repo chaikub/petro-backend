@@ -1,5 +1,6 @@
 package com.example.test.service;
 
+import com.example.test.core.AccountEntity;
 import com.example.test.core.data.AccountRepository;
 import com.proto.prime.AddOilToFavoriteRequest;
 import com.proto.prime.AddOilToFavoriteResponse;
@@ -12,6 +13,7 @@ import java.util.List;
 
 @Service
 public class OilService extends OilServiceGrpc.OilServiceImplBase {
+    boolean isSuccess = false;
     @Autowired
     private AccountRepository accountRepository;
 
@@ -19,11 +21,19 @@ public class OilService extends OilServiceGrpc.OilServiceImplBase {
     public void addOilToFavorite(AddOilToFavoriteRequest request, StreamObserver<AddOilToFavoriteResponse> responseObserver) {
         try {
             System.out.println(request);
+            AccountEntity account = accountRepository.findByUsername(request.getUsername());
+            List<String> favoil = account.getFavoil();
+            favoil.add(request.getName());
+            account.setFavoil(favoil);
+            System.out.println(account);
+            accountRepository.save(account);
+            isSuccess = true;
+
         }catch (Exception e){
             System.out.println(e);
         }
         AddOilToFavoriteResponse response = AddOilToFavoriteResponse.newBuilder()
-                .setIsSuccess(true)
+                .setIsSuccess(isSuccess)
                 .build();
         responseObserver.onNext(response);
         responseObserver.onCompleted();

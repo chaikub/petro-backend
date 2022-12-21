@@ -2,6 +2,8 @@ package com.example.test.command.rest;
 
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 public class CreateAccountRestModel {
     private String _id;
@@ -10,4 +12,5 @@ public class CreateAccountRestModel {
     private String firstName;
     private String lastName;
     private String phone;
+    private List<String> favoil;
 }

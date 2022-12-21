@@ -66,4 +66,29 @@ public interface SignUpRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getPhoneBytes();
+
+  /**
+   * <code>repeated string favoil = 7;</code>
+   * @return A list containing the favoil.
+   */
+  java.util.List<java.lang.String>
+      getFavoilList();
+  /**
+   * <code>repeated string favoil = 7;</code>
+   * @return The count of favoil.
+   */
+  int getFavoilCount();
+  /**
+   * <code>repeated string favoil = 7;</code>
+   * @param index The index of the element to return.
+   * @return The favoil at the given index.
+   */
+  java.lang.String getFavoil(int index);
+  /**
+   * <code>repeated string favoil = 7;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the favoil at the given index.
+   */
+  com.google.protobuf.ByteString
+      getFavoilBytes(int index);
 }

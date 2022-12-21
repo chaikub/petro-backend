@@ -4,6 +4,8 @@ import lombok.Builder;
 import lombok.Data;
 import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
+import java.util.List;
+
 @Builder
 @Data
 public class CreateAccountCommand {
@@ -14,4 +16,5 @@ public class CreateAccountCommand {
     private String firstName;
     private String lastName;
     private String phone;
+    private List<String> favoil;
 }

@@ -9,6 +9,8 @@ import org.axonframework.modelling.command.AggregateLifecycle;
 import org.axonframework.spring.stereotype.Aggregate;
 import org.springframework.beans.BeanUtils;
 
+import java.util.List;
+
 @Aggregate
 public class AccountAggregate {
 
@@ -19,6 +21,8 @@ public class AccountAggregate {
     private String firstName;
     private String lastName;
     private String phone;
+
+    private List<String> favoil;
 
     public AccountAggregate(){};
 
@@ -36,5 +40,6 @@ public class AccountAggregate {
         this.firstName = accountCreateEvent.getFirstName();
         this.lastName = accountCreateEvent.getLastName();
         this.phone = accountCreateEvent.getPhone();
+        this.favoil = accountCreateEvent.getFavoil();
     }
 }

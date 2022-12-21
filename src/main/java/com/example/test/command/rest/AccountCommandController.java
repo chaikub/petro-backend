@@ -4,6 +4,8 @@ import com.proto.prime.*;
 import io.grpc.ManagedChannel;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
+
 @RestController
 @RequestMapping("/signUp")
 public class AccountCommandController {
@@ -15,13 +17,14 @@ public class AccountCommandController {
         this.blockingStub = AccountServiceGrpc.newBlockingStub(channel);
     }
     @PostMapping
-    public boolean createAccount(@RequestBody CreateAccountRestModel model){
+    public boolean createAccount(@RequestParam CreateAccountRestModel model){
         SignUpRequest signUp = SignUpRequest.newBuilder()
                 .setUsername(model.getUsername())
                 .setPassword(model.getPassword())
                 .setFirstName(model.getFirstName())
                 .setLastName(model.getLastName())
                 .setPhone(model.getPhone())
+                .addAllFavoil(model.getFavoil())
                 .build();
         return blockingStub.signUp(signUp).getIsSuccess();
     }

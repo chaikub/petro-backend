@@ -31,6 +31,7 @@ message SignUpRequest {
   string firstName = 4;
   string lastName = 5;
   string phone = 6;
+  repeated string favoil = 7;
 
 }
 

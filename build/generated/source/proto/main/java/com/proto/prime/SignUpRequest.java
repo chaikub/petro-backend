@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
     firstName_ = "";
     lastName_ = "";
     phone_ = "";
+    favoil_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -238,6 +239,41 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int FAVOIL_FIELD_NUMBER = 7;
+  private com.google.protobuf.LazyStringList favoil_;
+  /**
+   * <code>repeated string favoil = 7;</code>
+   * @return A list containing the favoil.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getFavoilList() {
+    return favoil_;
+  }
+  /**
+   * <code>repeated string favoil = 7;</code>
+   * @return The count of favoil.
+   */
+  public int getFavoilCount() {
+    return favoil_.size();
+  }
+  /**
+   * <code>repeated string favoil = 7;</code>
+   * @param index The index of the element to return.
+   * @return The favoil at the given index.
+   */
+  public java.lang.String getFavoil(int index) {
+    return favoil_.get(index);
+  }
+  /**
+   * <code>repeated string favoil = 7;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the favoil at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getFavoilBytes(int index) {
+    return favoil_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -267,6 +303,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(phone_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, phone_);
     }
+    for (int i = 0; i < favoil_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, favoil_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -290,6 +329,14 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(phone_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, phone_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < favoil_.size(); i++) {
+        dataSize += computeStringSizeNoTag(favoil_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getFavoilList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -316,6 +363,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getLastName())) return false;
     if (!getPhone()
         .equals(other.getPhone())) return false;
+    if (!getFavoilList()
+        .equals(other.getFavoilList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -337,6 +386,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getLastName().hashCode();
     hash = (37 * hash) + PHONE_FIELD_NUMBER;
     hash = (53 * hash) + getPhone().hashCode();
+    if (getFavoilCount() > 0) {
+      hash = (37 * hash) + FAVOIL_FIELD_NUMBER;
+      hash = (53 * hash) + getFavoilList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -475,6 +528,8 @@ private static final long serialVersionUID = 0L;
 
       phone_ = "";
 
+      favoil_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -501,11 +556,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.proto.prime.SignUpRequest buildPartial() {
       com.proto.prime.SignUpRequest result = new com.proto.prime.SignUpRequest(this);
+      int from_bitField0_ = bitField0_;
       result.username_ = username_;
       result.password_ = password_;
       result.firstName_ = firstName_;
       result.lastName_ = lastName_;
       result.phone_ = phone_;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        favoil_ = favoil_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.favoil_ = favoil_;
       onBuilt();
       return result;
     }
@@ -574,6 +635,16 @@ private static final long serialVersionUID = 0L;
         phone_ = other.phone_;
         onChanged();
       }
+      if (!other.favoil_.isEmpty()) {
+        if (favoil_.isEmpty()) {
+          favoil_ = other.favoil_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureFavoilIsMutable();
+          favoil_.addAll(other.favoil_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -625,6 +696,12 @@ private static final long serialVersionUID = 0L;
 
               break;
             } // case 50
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+              ensureFavoilIsMutable();
+              favoil_.add(s);
+              break;
+            } // case 58
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -640,6 +717,7 @@ private static final long serialVersionUID = 0L;
       } // finally
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object username_ = "";
     /**
@@ -1017,6 +1095,116 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       phone_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList favoil_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureFavoilIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        favoil_ = new com.google.protobuf.LazyStringArrayList(favoil_);
+        bitField0_ |= 0x00000001;
+       }
+    }
+    /**
+     * <code>repeated string favoil = 7;</code>
+     * @return A list containing the favoil.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getFavoilList() {
+      return favoil_.getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string favoil = 7;</code>
+     * @return The count of favoil.
+     */
+    public int getFavoilCount() {
+      return favoil_.size();
+    }
+    /**
+     * <code>repeated string favoil = 7;</code>
+     * @param index The index of the element to return.
+     * @return The favoil at the given index.
+     */
+    public java.lang.String getFavoil(int index) {
+      return favoil_.get(index);
+    }
+    /**
+     * <code>repeated string favoil = 7;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the favoil at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getFavoilBytes(int index) {
+      return favoil_.getByteString(index);
+    }
+    /**
+     * <code>repeated string favoil = 7;</code>
+     * @param index The index to set the value at.
+     * @param value The favoil to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFavoil(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureFavoilIsMutable();
+      favoil_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string favoil = 7;</code>
+     * @param value The favoil to add.
+     * @return This builder for chaining.
+     */
+    public Builder addFavoil(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureFavoilIsMutable();
+      favoil_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string favoil = 7;</code>
+     * @param values The favoil to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllFavoil(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureFavoilIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, favoil_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string favoil = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearFavoil() {
+      favoil_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string favoil = 7;</code>
+     * @param value The bytes of the favoil to add.
+     * @return This builder for chaining.
+     */
+    public Builder addFavoilBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureFavoilIsMutable();
+      favoil_.add(value);
       onChanged();
       return this;
     }

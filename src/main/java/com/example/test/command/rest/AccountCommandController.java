@@ -17,7 +17,7 @@ public class AccountCommandController {
         this.blockingStub = AccountServiceGrpc.newBlockingStub(channel);
     }
     @PostMapping
-    public boolean createAccount(@RequestParam CreateAccountRestModel model){
+    public boolean createAccount(@RequestBody CreateAccountRestModel model){
         SignUpRequest signUp = SignUpRequest.newBuilder()
                 .setUsername(model.getUsername())
                 .setPassword(model.getPassword())

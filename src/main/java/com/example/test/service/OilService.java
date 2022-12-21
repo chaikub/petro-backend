@@ -15,6 +15,7 @@ public class OilService extends OilServiceGrpc.OilServiceImplBase {
     @Autowired
     private AccountRepository accountRepository;
 
+    //add favorite oil
     @Override
     public void addOilToFavorite(AddOilToFavoriteRequest request, StreamObserver<AddOilToFavoriteResponse> responseObserver) {
         try {

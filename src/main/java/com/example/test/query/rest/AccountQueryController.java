@@ -2,12 +2,9 @@ package com.example.test.query.rest;
 
 
 import com.proto.prime.AccountServiceGrpc;
-import com.proto.prime.GetAccountsRequest;
 import com.proto.prime.SignInRequest;
 import io.grpc.ManagedChannel;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/signIn")

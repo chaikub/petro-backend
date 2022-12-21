@@ -1,6 +1,5 @@
 package com.example.test.command.rest;
 
-import com.example.test.command.CreateAccountCommand;
 import com.proto.prime.*;
 import io.grpc.ManagedChannel;
 import org.springframework.web.bind.annotation.*;
@@ -27,8 +26,4 @@ public class AccountCommandController {
         return blockingStub.signUp(signUp).getIsSuccess();
     }
 
-    @DeleteMapping("/{id}")
-    public void deleteBeer(@PathVariable String id) {
-//        beerService.deleteQuery(id);
-    }
 }

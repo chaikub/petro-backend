@@ -57,16 +57,26 @@ public class AccountService extends AccountServiceGrpc.AccountServiceImplBase {
     @Override
     public void signUp(SignUpRequest request, StreamObserver<SignUpResponse> responseObserver) {
         boolean isSuccess = false;
+        boolean hasAlreadyUsed = false;
         try {
-            AccountEntity account = new AccountEntity();
-            account.setUsername(request.getUsername());
-            account.setPassword(request.getPassword());
-            account.setFirstName(request.getFirstName());
-            account.setLastName(request.getLastName());
-            account.setPhone(request.getPhone());
-            accountRepository.save(account);
-            System.out.println(account);
-            isSuccess = true;
+            List<AccountEntity> allAccount = accountRepository.findAll();
+            for(AccountEntity account:allAccount){
+                if(account.getUsername().equals(request.getUsername()) ){
+                    hasAlreadyUsed = true;
+                }
+            }
+            if(!hasAlreadyUsed){
+                AccountEntity account = new AccountEntity();
+                account.setUsername(request.getUsername());
+                account.setPassword(request.getPassword());
+                account.setFirstName(request.getFirstName());
+                account.setLastName(request.getLastName());
+                account.setPhone(request.getPhone());
+                accountRepository.save(account);
+                System.out.println(account);
+                isSuccess = true;
+            }
+
 
         }catch (Exception e){
             System.out.println(e);

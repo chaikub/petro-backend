@@ -38,6 +38,7 @@ public class OilService extends OilServiceGrpc.OilServiceImplBase {
 
     }
 
+    //remove favorite oil
     @Override
     public void removeFavOil(RemoveOilFromFavoriteRequest request, StreamObserver<RemoveOilFromFavoriteResponse> responseObserver) {
         try {

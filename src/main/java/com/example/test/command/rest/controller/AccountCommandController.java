@@ -1,7 +1,7 @@
 package com.example.test.command.rest.controller;
 
 import com.example.test.command.CreateAccountCommand;
-import com.example.test.command.rest.FavRouteRest;
+import com.example.test.command.rest.model.FavRouteRestModel;
 import com.example.test.command.rest.model.CreateAccountRestModel;
 import com.proto.prime.*;
 import io.grpc.ManagedChannel;
@@ -28,9 +28,9 @@ public class AccountCommandController {
         this.commandGateway = commandGateway;
     }
 
-    public List<FavRoute> convertFavModelToRequest(List<FavRouteRest> favRoute){
+    public List<FavRoute> convertFavModelToRequest(List<FavRouteRestModel> favRoute){
         List<FavRoute> favRoutes = new ArrayList<>();
-        for(FavRouteRest favRouteList: favRoute){
+        for(FavRouteRestModel favRouteList: favRoute){
             FavRoute fav = FavRoute.newBuilder()
                     .setDistance(favRouteList.getDistance())
                     .setDestination(favRouteList.getDestination())
@@ -52,17 +52,17 @@ public class AccountCommandController {
                 .addAllFavoil(model.getFavoil())
                 .addAllFavRoute(convertFavModelToRequest(model.getFavRoute()))
                 .build();
-//        CreateAccountCommand command = CreateAccountCommand.builder()
-//                ._id(UUID.randomUUID().toString())
-//                .username(model.getUsername())
-//                .password(model.getPassword())
-//                .firstName(model.getFirstName())
-//                .lastName(model.getLastName())
-//                .phone(model.getPhone())
-//                .favoil(model.getFavoil())
-//                .favRoute(model.getFavRoute())
-//                .build();
-//        commandGateway.sendAndWait(command);
+        CreateAccountCommand command = CreateAccountCommand.builder()
+                ._id(UUID.randomUUID().toString())
+                .username(model.getUsername())
+                .password(model.getPassword())
+                .firstName(model.getFirstName())
+                .lastName(model.getLastName())
+                .phone(model.getPhone())
+                .favoil(model.getFavoil())
+                .favRoute(model.getFavRoute())
+                .build();
+        commandGateway.sendAndWait(command);
         return blockingStub.signUp(signUp).getIsSuccess();
     }
 

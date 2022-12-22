@@ -5,12 +5,11 @@ option java_multiple_files = true;
 message Route{
   string startName = 1;
   string destination = 2;
-  int32 distance = 3;
+  double distance = 3;
   string oil = 4;
-
 }
 
-message QueryFavRoutesResquest{
+message QueryFavRoutesRequest{
   string username = 1;
 }
 
@@ -39,5 +38,5 @@ message RemoveRouteFromFavoriteResponse {
 service RouteService{
   rpc AddRouteToFavorite(AddRouteToFavoriteRequest) returns (AddRouteToFavoriteResponse){};
   rpc RemoveAddRouteToFavorite(RemoveRouteFromFavoriteRequest) returns (RemoveRouteFromFavoriteResponse){};
-  rpc QueryFavRoute(QueryFavRoutesResquest) returns (QueryFavRoutesResponse){};
+  rpc QueryFavRoute(QueryFavRoutesRequest) returns (QueryFavRoutesResponse){};
 }

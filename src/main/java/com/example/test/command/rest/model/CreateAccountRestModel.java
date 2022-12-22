@@ -1,7 +1,5 @@
 package com.example.test.command.rest.model;
 
-import com.example.test.command.rest.FavRouteRest;
-import com.proto.prime.FavRoute;
 import lombok.Data;
 
 import java.util.List;
@@ -15,5 +13,5 @@ public class CreateAccountRestModel {
     private String lastName;
     private String phone;
     private List<String> favoil;
-    private List<FavRouteRest> favRoute;
+    private List<FavRouteRestModel> favRoute;
 }

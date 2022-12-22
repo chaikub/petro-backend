@@ -6,5 +6,5 @@ import lombok.Data;
 public class CalculateRestModel {
     private double distance;
     private double oil_Price;
-    private double rate_of_waste;
+    private double km_per_oil;
 }

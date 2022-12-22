@@ -1,7 +1,6 @@
-package com.example.test.core.event;
+package com.example.test.command.event;
 
-import com.example.test.command.rest.FavRouteRest;
-import com.proto.prime.FavRoute;
+import com.example.test.command.rest.model.FavRouteRestModel;
 import lombok.Data;
 
 import java.util.List;
@@ -15,5 +14,5 @@ public class AccountCreateEvent {
     private String lastName;
     private String phone;
     private List<String> favoil;
-    private List<FavRouteRest> favRoute;
+    private List<FavRouteRestModel> favRoute;
 }

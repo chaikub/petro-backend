@@ -123,13 +123,13 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DISTANCE_FIELD_NUMBER = 3;
-  private int distance_;
+  private double distance_;
   /**
-   * <code>int32 distance = 3;</code>
+   * <code>double distance = 3;</code>
    * @return The distance.
    */
   @java.lang.Override
-  public int getDistance() {
+  public double getDistance() {
     return distance_;
   }
 
@@ -191,8 +191,8 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destination_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, destination_);
     }
-    if (distance_ != 0) {
-      output.writeInt32(3, distance_);
+    if (java.lang.Double.doubleToRawLongBits(distance_) != 0) {
+      output.writeDouble(3, distance_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(oil_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, oil_);
@@ -212,9 +212,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destination_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, destination_);
     }
-    if (distance_ != 0) {
+    if (java.lang.Double.doubleToRawLongBits(distance_) != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(3, distance_);
+        .computeDoubleSize(3, distance_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(oil_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, oil_);
@@ -238,8 +238,9 @@ private static final long serialVersionUID = 0L;
         .equals(other.getStartName())) return false;
     if (!getDestination()
         .equals(other.getDestination())) return false;
-    if (getDistance()
-        != other.getDistance()) return false;
+    if (java.lang.Double.doubleToLongBits(getDistance())
+        != java.lang.Double.doubleToLongBits(
+            other.getDistance())) return false;
     if (!getOil()
         .equals(other.getOil())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -258,7 +259,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + DESTINATION_FIELD_NUMBER;
     hash = (53 * hash) + getDestination().hashCode();
     hash = (37 * hash) + DISTANCE_FIELD_NUMBER;
-    hash = (53 * hash) + getDistance();
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        java.lang.Double.doubleToLongBits(getDistance()));
     hash = (37 * hash) + OIL_FIELD_NUMBER;
     hash = (53 * hash) + getOil().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -393,7 +395,7 @@ private static final long serialVersionUID = 0L;
 
       destination_ = "";
 
-      distance_ = 0;
+      distance_ = 0D;
 
       oil_ = "";
 
@@ -483,7 +485,7 @@ private static final long serialVersionUID = 0L;
         destination_ = other.destination_;
         onChanged();
       }
-      if (other.getDistance() != 0) {
+      if (other.getDistance() != 0D) {
         setDistance(other.getDistance());
       }
       if (!other.getOil().isEmpty()) {
@@ -526,11 +528,11 @@ private static final long serialVersionUID = 0L;
 
               break;
             } // case 18
-            case 24: {
-              distance_ = input.readInt32();
+            case 25: {
+              distance_ = input.readDouble();
 
               break;
-            } // case 24
+            } // case 25
             case 34: {
               oil_ = input.readStringRequireUtf8();
 
@@ -704,33 +706,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int distance_ ;
+    private double distance_ ;
     /**
-     * <code>int32 distance = 3;</code>
+     * <code>double distance = 3;</code>
      * @return The distance.
      */
     @java.lang.Override
-    public int getDistance() {
+    public double getDistance() {
       return distance_;
     }
     /**
-     * <code>int32 distance = 3;</code>
+     * <code>double distance = 3;</code>
      * @param value The distance to set.
      * @return This builder for chaining.
      */
-    public Builder setDistance(int value) {
+    public Builder setDistance(double value) {
       
       distance_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 distance = 3;</code>
+     * <code>double distance = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearDistance() {
       
-      distance_ = 0;
+      distance_ = 0D;
       onChanged();
       return this;
     }

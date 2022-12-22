@@ -32,10 +32,10 @@ public interface RouteOrBuilder extends
       getDestinationBytes();
 
   /**
-   * <code>int32 distance = 3;</code>
+   * <code>double distance = 3;</code>
    * @return The distance.
    */
-  int getDistance();
+  double getDistance();
 
   /**
    * <code>string oil = 4;</code>

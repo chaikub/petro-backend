@@ -1,6 +1,6 @@
 package com.example.test.service;
 
-import com.example.test.command.rest.FavRouteRest;
+import com.example.test.command.rest.model.FavRouteRestModel;
 import com.example.test.core.AccountEntity;
 import com.example.test.core.data.AccountRepository;
 import com.proto.prime.*;
@@ -17,17 +17,17 @@ public class RouteService extends RouteServiceGrpc.RouteServiceImplBase {
     private AccountRepository accountRepository;
 
 
-    public FavRouteRest convertFavProtoToRestModel(Route favRoute){
-        FavRouteRest favRouteRest = new FavRouteRest();
+    public FavRouteRestModel convertFavProtoToRestModel(Route favRoute){
+        FavRouteRestModel favRouteRest = new FavRouteRestModel();
         favRouteRest.setStartName(favRoute.getStartName());
         favRouteRest.setDestination(favRoute.getDestination());
         favRouteRest.setDistance(favRoute.getDistance());
         favRouteRest.setOil(favRoute.getOil());
         return favRouteRest;
     }
-    public List<Route> convertFavListProtoToRestModel(List<FavRouteRest> favRoute){
+    public List<Route> convertFavListProtoToRestModel(List<FavRouteRestModel> favRoute){
         List<Route> favRoutes = new ArrayList<>();
-        for(FavRouteRest favRouteList: favRoute){
+        for(FavRouteRestModel favRouteList: favRoute){
             Route fav = Route.newBuilder()
                     .setDistance(favRouteList.getDistance())
                     .setDestination(favRouteList.getDestination())
@@ -44,7 +44,7 @@ public class RouteService extends RouteServiceGrpc.RouteServiceImplBase {
         try {
             System.out.println(request.getRoute());
             AccountEntity account = accountRepository.findByUsername(request.getUsername());
-            List<FavRouteRest> favRoutes = account.getFavRoute();
+            List<FavRouteRestModel> favRoutes = account.getFavRoute();
             favRoutes.add(convertFavProtoToRestModel(request.getRoute()));
             account.setFavRoute(favRoutes);
             System.out.println(account.getFavRoute());
@@ -67,7 +67,7 @@ public class RouteService extends RouteServiceGrpc.RouteServiceImplBase {
         try {
             System.out.println(request.getRoute());
             AccountEntity account = accountRepository.findByUsername(request.getUsername());
-            List<FavRouteRest> favRoutes = account.getFavRoute();
+            List<FavRouteRestModel> favRoutes = account.getFavRoute();
             favRoutes.remove(convertFavProtoToRestModel(request.getRoute()));
             System.out.println(favRoutes);
             account.setFavRoute(favRoutes);
@@ -86,7 +86,7 @@ public class RouteService extends RouteServiceGrpc.RouteServiceImplBase {
     }
 
     @Override
-    public void queryFavRoute(QueryFavRoutesResquest request, StreamObserver<QueryFavRoutesResponse> responseObserver) {
+    public void queryFavRoute(QueryFavRoutesRequest request, StreamObserver<QueryFavRoutesResponse> responseObserver) {
         List<Route> favRouteList = new ArrayList<>();
         try {
             System.out.println(request);
@@ -104,4 +104,5 @@ public class RouteService extends RouteServiceGrpc.RouteServiceImplBase {
         responseObserver.onNext(response);
         responseObserver.onCompleted();
     }
+
 }

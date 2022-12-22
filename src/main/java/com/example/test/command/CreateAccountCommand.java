@@ -1,7 +1,6 @@
 package com.example.test.command;
 
-import com.example.test.command.rest.FavRouteRest;
-import com.proto.prime.FavRoute;
+import com.example.test.command.rest.model.FavRouteRestModel;
 import lombok.Builder;
 import lombok.Data;
 import org.axonframework.modelling.command.TargetAggregateIdentifier;
@@ -19,5 +18,5 @@ public class CreateAccountCommand {
     private String lastName;
     private String phone;
     private List<String> favoil;
-    private List<FavRouteRest> favRoute;
+    private List<FavRouteRestModel> favRoute;
 }

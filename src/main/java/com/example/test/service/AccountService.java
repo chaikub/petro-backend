@@ -1,6 +1,6 @@
 package com.example.test.service;
 
-import com.example.test.command.rest.FavRouteRest;
+import com.example.test.command.rest.model.FavRouteRestModel;
 import com.example.test.core.AccountEntity;
 import com.example.test.core.data.AccountRepository;
 import com.proto.prime.*;
@@ -56,10 +56,10 @@ public class AccountService extends AccountServiceGrpc.AccountServiceImplBase {
         responseObserver.onCompleted();
     }
 
-    public List<FavRouteRest> convertFavProtoToRestModel(List<FavRoute> favRoute){
-        List<FavRouteRest> favRoutes = new ArrayList<>();
+    public List<FavRouteRestModel> convertFavProtoToRestModel(List<FavRoute> favRoute){
+        List<FavRouteRestModel> favRoutes = new ArrayList<>();
         for(FavRoute favRouteList: favRoute){
-            FavRouteRest fav = new FavRouteRest();
+            FavRouteRestModel fav = new FavRouteRestModel();
             fav.setDistance(favRouteList.getDistance());
             fav.setDestination(favRouteList.getDestination());
             fav.setOil(favRouteList.getOil());

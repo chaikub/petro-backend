@@ -28,7 +28,7 @@ message GetAccountsResponse{
 message FavRoute{
   string startName = 1;
   string destination = 2;
-  int32 distance = 3;
+  double distance = 3;
   string oil = 4;
 }
 

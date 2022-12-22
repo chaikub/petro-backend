@@ -62,7 +62,7 @@ public final class Account {
       "\010username\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\"(\n\023Get" +
       "AccountsResponse\022\021\n\tisSuccess\030\001 \001(\010\"Q\n\010F" +
       "avRoute\022\021\n\tstartName\030\001 \001(\t\022\023\n\013destinatio" +
-      "n\030\002 \001(\t\022\020\n\010distance\030\003 \001(\005\022\013\n\003oil\030\004 \001(\t\"\224" +
+      "n\030\002 \001(\t\022\020\n\010distance\030\003 \001(\001\022\013\n\003oil\030\004 \001(\t\"\224" +
       "\001\n\rSignUpRequest\022\020\n\010username\030\001 \001(\t\022\020\n\010pa" +
       "ssword\030\002 \001(\t\022\021\n\tfirstName\030\004 \001(\t\022\020\n\010lastN" +
       "ame\030\005 \001(\t\022\r\n\005phone\030\006 \001(\t\022\016\n\006favoil\030\007 \003(\t" +

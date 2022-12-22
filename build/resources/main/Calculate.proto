@@ -1,0 +1,17 @@
+syntax = "proto3";
+option java_package = "com.proto.prime";
+option java_multiple_files = true;
+
+message CalculateRequest{
+  double distance = 1;
+  double oil_Price = 2;
+  double rate_of_waste = 3;
+}
+
+message CalculateResponse{
+  double result = 1;
+}
+
+service CalculateService {
+  rpc Calculate(CalculateRequest) returns (CalculateResponse){};
+}

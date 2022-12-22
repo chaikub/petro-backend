@@ -25,6 +25,11 @@ public final class Account {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_GetAccountsResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_FavRoute_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_FavRoute_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_SignUpRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -55,19 +60,21 @@ public final class Account {
     java.lang.String[] descriptorData = {
       "\n\rAccount.proto\"8\n\022GetAccountsRequest\022\020\n" +
       "\010username\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\"(\n\023Get" +
-      "AccountsResponse\022\021\n\tisSuccess\030\001 \001(\010\"w\n\rS" +
-      "ignUpRequest\022\020\n\010username\030\001 \001(\t\022\020\n\010passwo" +
-      "rd\030\002 \001(\t\022\021\n\tfirstName\030\004 \001(\t\022\020\n\010lastName\030" +
-      "\005 \001(\t\022\r\n\005phone\030\006 \001(\t\022\016\n\006favoil\030\007 \003(\t\"#\n\016" +
-      "SignUpResponse\022\021\n\tisSuccess\030\001 \001(\010\"3\n\rSig" +
-      "nInRequest\022\020\n\010username\030\001 \001(\t\022\020\n\010password" +
-      "\030\002 \001(\t\"#\n\016SignInResponse\022\021\n\tisSuccess\030\001 " +
-      "\001(\0102\246\001\n\016AccountService\022+\n\006SignUp\022\016.SignU" +
-      "pRequest\032\017.SignUpResponse\"\000\022+\n\006SignIn\022\016." +
-      "SignInRequest\032\017.SignInResponse\"\000\022:\n\013getA" +
-      "ccounts\022\023.GetAccountsRequest\032\024.GetAccoun" +
-      "tsResponse\"\000B\023\n\017com.proto.primeP\001b\006proto" +
-      "3"
+      "AccountsResponse\022\021\n\tisSuccess\030\001 \001(\010\"Q\n\010F" +
+      "avRoute\022\021\n\tstartName\030\001 \001(\t\022\023\n\013destinatio" +
+      "n\030\002 \001(\t\022\020\n\010distance\030\003 \001(\005\022\013\n\003oil\030\004 \001(\t\"\224" +
+      "\001\n\rSignUpRequest\022\020\n\010username\030\001 \001(\t\022\020\n\010pa" +
+      "ssword\030\002 \001(\t\022\021\n\tfirstName\030\004 \001(\t\022\020\n\010lastN" +
+      "ame\030\005 \001(\t\022\r\n\005phone\030\006 \001(\t\022\016\n\006favoil\030\007 \003(\t" +
+      "\022\033\n\010favRoute\030\010 \003(\0132\t.FavRoute\"#\n\016SignUpR" +
+      "esponse\022\021\n\tisSuccess\030\001 \001(\010\"3\n\rSignInRequ" +
+      "est\022\020\n\010username\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\"" +
+      "#\n\016SignInResponse\022\021\n\tisSuccess\030\001 \001(\0102\246\001\n" +
+      "\016AccountService\022+\n\006SignUp\022\016.SignUpReques" +
+      "t\032\017.SignUpResponse\"\000\022+\n\006SignIn\022\016.SignInR" +
+      "equest\032\017.SignInResponse\"\000\022:\n\013getAccounts" +
+      "\022\023.GetAccountsRequest\032\024.GetAccountsRespo" +
+      "nse\"\000B\023\n\017com.proto.primeP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -85,26 +92,32 @@ public final class Account {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GetAccountsResponse_descriptor,
         new java.lang.String[] { "IsSuccess", });
-    internal_static_SignUpRequest_descriptor =
+    internal_static_FavRoute_descriptor =
       getDescriptor().getMessageTypes().get(2);
+    internal_static_FavRoute_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_FavRoute_descriptor,
+        new java.lang.String[] { "StartName", "Destination", "Distance", "Oil", });
+    internal_static_SignUpRequest_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_SignUpRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SignUpRequest_descriptor,
-        new java.lang.String[] { "Username", "Password", "FirstName", "LastName", "Phone", "Favoil", });
+        new java.lang.String[] { "Username", "Password", "FirstName", "LastName", "Phone", "Favoil", "FavRoute", });
     internal_static_SignUpResponse_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_SignUpResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SignUpResponse_descriptor,
         new java.lang.String[] { "IsSuccess", });
     internal_static_SignInRequest_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_SignInRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SignInRequest_descriptor,
         new java.lang.String[] { "Username", "Password", });
     internal_static_SignInResponse_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_SignInResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SignInResponse_descriptor,

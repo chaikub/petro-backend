@@ -1,7 +1,9 @@
 package com.example.test.command;
 
 import com.example.test.command.rest.AccountCommandController;
+import com.example.test.command.rest.FavRouteRest;
 import com.example.test.core.event.AccountCreateEvent;
+import com.proto.prime.FavRoute;
 import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.modelling.command.AggregateIdentifier;
@@ -23,6 +25,7 @@ public class AccountAggregate {
     private String phone;
 
     private List<String> favoil;
+    private List<FavRouteRest> favRoute;
 
     public AccountAggregate(){};
 
@@ -41,5 +44,6 @@ public class AccountAggregate {
         this.lastName = accountCreateEvent.getLastName();
         this.phone = accountCreateEvent.getPhone();
         this.favoil = accountCreateEvent.getFavoil();
+        this.favRoute = accountCreateEvent.getFavRoute();
     }
 }

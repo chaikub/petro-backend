@@ -1,0 +1,34 @@
+syntax = "proto3";
+option java_package = "com.proto.prime";
+option java_multiple_files = true;
+
+message Route{
+  string startName = 1;
+  string destination = 2;
+  int32 distance = 3;
+  string oil = 4;
+
+}
+
+message AddRouteToFavoriteRequest {
+  string username = 1;
+  Route route = 2;
+}
+
+message AddRouteToFavoriteResponse {
+  bool isSuccess = 1;
+}
+
+message RemoveRouteFromFavoriteRequest {
+  string username = 1;
+  Route route = 2;
+}
+
+message RemoveRouteFromFavoriteResponse {
+  bool isSuccess = 1;
+}
+
+service RouteService{
+  rpc AddRouteToFavorite(AddRouteToFavoriteRequest) returns (AddRouteToFavoriteResponse){};
+  rpc RemoveAddRouteToFavorite(RemoveRouteFromFavoriteRequest) returns (RemoveRouteFromFavoriteResponse){};
+}

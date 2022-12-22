@@ -1,5 +1,7 @@
 package com.example.test.core;
 
+import com.example.test.command.rest.FavRouteRest;
+import com.proto.prime.FavRoute;
 import jakarta.persistence.Id;
 import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -18,4 +20,5 @@ public class AccountEntity implements Serializable {
     private String lastName;
     private String phone;
     private List<String> favoil;
+    private List<FavRouteRest> favRoute;
 }

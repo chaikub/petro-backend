@@ -91,4 +91,28 @@ public interface SignUpRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getFavoilBytes(int index);
+
+  /**
+   * <code>repeated .FavRoute favRoute = 8;</code>
+   */
+  java.util.List<com.proto.prime.FavRoute> 
+      getFavRouteList();
+  /**
+   * <code>repeated .FavRoute favRoute = 8;</code>
+   */
+  com.proto.prime.FavRoute getFavRoute(int index);
+  /**
+   * <code>repeated .FavRoute favRoute = 8;</code>
+   */
+  int getFavRouteCount();
+  /**
+   * <code>repeated .FavRoute favRoute = 8;</code>
+   */
+  java.util.List<? extends com.proto.prime.FavRouteOrBuilder> 
+      getFavRouteOrBuilderList();
+  /**
+   * <code>repeated .FavRoute favRoute = 8;</code>
+   */
+  com.proto.prime.FavRouteOrBuilder getFavRouteOrBuilder(
+      int index);
 }

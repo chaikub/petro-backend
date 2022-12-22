@@ -1,5 +1,6 @@
 package com.example.test.service;
 
+import com.example.test.command.rest.FavRouteRest;
 import com.example.test.core.AccountEntity;
 import com.example.test.core.data.AccountRepository;
 import com.proto.prime.*;
@@ -7,6 +8,7 @@ import io.grpc.stub.StreamObserver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -54,6 +56,18 @@ public class AccountService extends AccountServiceGrpc.AccountServiceImplBase {
         responseObserver.onCompleted();
     }
 
+    public List<FavRouteRest> convertFavProtoToRestModel(List<FavRoute> favRoute){
+        List<FavRouteRest> favRoutes = new ArrayList<>();
+        for(FavRoute favRouteList: favRoute){
+            FavRouteRest fav = new FavRouteRest();
+            fav.setDistance(favRouteList.getDistance());
+            fav.setDestination(favRouteList.getDestination());
+            fav.setOil(favRouteList.getOil());
+            fav.setStartName(favRouteList.getStartName());
+            favRoutes.add(fav);
+        }
+        return favRoutes;
+    }
     @Override
     public void signUp(SignUpRequest request, StreamObserver<SignUpResponse> responseObserver) {
         boolean isSuccess = false;
@@ -73,6 +87,7 @@ public class AccountService extends AccountServiceGrpc.AccountServiceImplBase {
                 account.setLastName(request.getLastName());
                 account.setPhone(request.getPhone());
                 account.setFavoil(request.getFavoilList());
+                account.setFavRoute(convertFavProtoToRestModel(request.getFavRouteList()));
                 accountRepository.save(account);
                 System.out.println(account);
                 isSuccess = true;

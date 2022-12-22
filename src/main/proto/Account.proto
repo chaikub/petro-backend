@@ -25,6 +25,13 @@ message GetAccountsResponse{
   bool isSuccess = 1;
 }
 
+message FavRoute{
+  string startName = 1;
+  string destination = 2;
+  int32 distance = 3;
+  string oil = 4;
+}
+
 message SignUpRequest {
   string username = 1;
   string password = 2;
@@ -32,6 +39,7 @@ message SignUpRequest {
   string lastName = 5;
   string phone = 6;
   repeated string favoil = 7;
+  repeated FavRoute favRoute = 8;
 
 }
 

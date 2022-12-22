@@ -65,15 +65,15 @@ private static final long serialVersionUID = 0L;
     return oilPrice_;
   }
 
-  public static final int RATE_OF_WASTE_FIELD_NUMBER = 3;
-  private double rateOfWaste_;
+  public static final int KM_PER_OIL_FIELD_NUMBER = 3;
+  private double kmPerOil_;
   /**
-   * <code>double rate_of_waste = 3;</code>
-   * @return The rateOfWaste.
+   * <code>double km_per_oil = 3;</code>
+   * @return The kmPerOil.
    */
   @java.lang.Override
-  public double getRateOfWaste() {
-    return rateOfWaste_;
+  public double getKmPerOil() {
+    return kmPerOil_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -96,8 +96,8 @@ private static final long serialVersionUID = 0L;
     if (java.lang.Double.doubleToRawLongBits(oilPrice_) != 0) {
       output.writeDouble(2, oilPrice_);
     }
-    if (java.lang.Double.doubleToRawLongBits(rateOfWaste_) != 0) {
-      output.writeDouble(3, rateOfWaste_);
+    if (java.lang.Double.doubleToRawLongBits(kmPerOil_) != 0) {
+      output.writeDouble(3, kmPerOil_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -116,9 +116,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(2, oilPrice_);
     }
-    if (java.lang.Double.doubleToRawLongBits(rateOfWaste_) != 0) {
+    if (java.lang.Double.doubleToRawLongBits(kmPerOil_) != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(3, rateOfWaste_);
+        .computeDoubleSize(3, kmPerOil_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -141,9 +141,9 @@ private static final long serialVersionUID = 0L;
     if (java.lang.Double.doubleToLongBits(getOilPrice())
         != java.lang.Double.doubleToLongBits(
             other.getOilPrice())) return false;
-    if (java.lang.Double.doubleToLongBits(getRateOfWaste())
+    if (java.lang.Double.doubleToLongBits(getKmPerOil())
         != java.lang.Double.doubleToLongBits(
-            other.getRateOfWaste())) return false;
+            other.getKmPerOil())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -161,9 +161,9 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + OIL_PRICE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         java.lang.Double.doubleToLongBits(getOilPrice()));
-    hash = (37 * hash) + RATE_OF_WASTE_FIELD_NUMBER;
+    hash = (37 * hash) + KM_PER_OIL_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        java.lang.Double.doubleToLongBits(getRateOfWaste()));
+        java.lang.Double.doubleToLongBits(getKmPerOil()));
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -296,7 +296,7 @@ private static final long serialVersionUID = 0L;
 
       oilPrice_ = 0D;
 
-      rateOfWaste_ = 0D;
+      kmPerOil_ = 0D;
 
       return this;
     }
@@ -326,7 +326,7 @@ private static final long serialVersionUID = 0L;
       com.proto.prime.CalculateRequest result = new com.proto.prime.CalculateRequest(this);
       result.distance_ = distance_;
       result.oilPrice_ = oilPrice_;
-      result.rateOfWaste_ = rateOfWaste_;
+      result.kmPerOil_ = kmPerOil_;
       onBuilt();
       return result;
     }
@@ -381,8 +381,8 @@ private static final long serialVersionUID = 0L;
       if (other.getOilPrice() != 0D) {
         setOilPrice(other.getOilPrice());
       }
-      if (other.getRateOfWaste() != 0D) {
-        setRateOfWaste(other.getRateOfWaste());
+      if (other.getKmPerOil() != 0D) {
+        setKmPerOil(other.getKmPerOil());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -421,7 +421,7 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 17
             case 25: {
-              rateOfWaste_ = input.readDouble();
+              kmPerOil_ = input.readDouble();
 
               break;
             } // case 25
@@ -503,33 +503,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private double rateOfWaste_ ;
+    private double kmPerOil_ ;
     /**
-     * <code>double rate_of_waste = 3;</code>
-     * @return The rateOfWaste.
+     * <code>double km_per_oil = 3;</code>
+     * @return The kmPerOil.
      */
     @java.lang.Override
-    public double getRateOfWaste() {
-      return rateOfWaste_;
+    public double getKmPerOil() {
+      return kmPerOil_;
     }
     /**
-     * <code>double rate_of_waste = 3;</code>
-     * @param value The rateOfWaste to set.
+     * <code>double km_per_oil = 3;</code>
+     * @param value The kmPerOil to set.
      * @return This builder for chaining.
      */
-    public Builder setRateOfWaste(double value) {
+    public Builder setKmPerOil(double value) {
       
-      rateOfWaste_ = value;
+      kmPerOil_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>double rate_of_waste = 3;</code>
+     * <code>double km_per_oil = 3;</code>
      * @return This builder for chaining.
      */
-    public Builder clearRateOfWaste() {
+    public Builder clearKmPerOil() {
       
-      rateOfWaste_ = 0D;
+      kmPerOil_ = 0D;
       onChanged();
       return this;
     }

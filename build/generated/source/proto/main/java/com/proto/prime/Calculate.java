@@ -33,12 +33,12 @@ public final class Calculate {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\017Calculate.proto\"N\n\020CalculateRequest\022\020\n" +
-      "\010distance\030\001 \001(\001\022\021\n\toil_Price\030\002 \001(\001\022\025\n\rra" +
-      "te_of_waste\030\003 \001(\001\"#\n\021CalculateResponse\022\016" +
-      "\n\006result\030\001 \001(\0012H\n\020CalculateService\0224\n\tCa" +
-      "lculate\022\021.CalculateRequest\032\022.CalculateRe" +
-      "sponse\"\000B\023\n\017com.proto.primeP\001b\006proto3"
+      "\n\017Calculate.proto\"K\n\020CalculateRequest\022\020\n" +
+      "\010distance\030\001 \001(\001\022\021\n\toil_Price\030\002 \001(\001\022\022\n\nkm" +
+      "_per_oil\030\003 \001(\001\"#\n\021CalculateResponse\022\016\n\006r" +
+      "esult\030\001 \001(\0012H\n\020CalculateService\0224\n\tCalcu" +
+      "late\022\021.CalculateRequest\032\022.CalculateRespo" +
+      "nse\"\000B\023\n\017com.proto.primeP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -49,7 +49,7 @@ public final class Calculate {
     internal_static_CalculateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CalculateRequest_descriptor,
-        new java.lang.String[] { "Distance", "OilPrice", "RateOfWaste", });
+        new java.lang.String[] { "Distance", "OilPrice", "KmPerOil", });
     internal_static_CalculateResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_CalculateResponse_fieldAccessorTable = new

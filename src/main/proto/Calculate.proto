@@ -5,7 +5,7 @@ option java_multiple_files = true;
 message CalculateRequest{
   double distance = 1;
   double oil_Price = 2;
-  double rate_of_waste = 3;
+  double km_per_oil = 3;
 }
 
 message CalculateResponse{

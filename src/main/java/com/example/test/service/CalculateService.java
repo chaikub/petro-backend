@@ -17,7 +17,7 @@ public class CalculateService extends CalculateServiceGrpc.CalculateServiceImplB
     public void calculate(CalculateRequest request, StreamObserver<CalculateResponse> responseObserver) {
         double price = 0;
         try {
-            double v = request.getDistance()/ request.getRateOfWaste();
+            double v = request.getDistance()/ request.getKmPerOil();
             price = request.getOilPrice()*v;
             System.out.println(df.format(price));
         }catch (Exception e){

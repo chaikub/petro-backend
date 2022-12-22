@@ -20,8 +20,8 @@ public interface CalculateRequestOrBuilder extends
   double getOilPrice();
 
   /**
-   * <code>double rate_of_waste = 3;</code>
-   * @return The rateOfWaste.
+   * <code>double km_per_oil = 3;</code>
+   * @return The kmPerOil.
    */
-  double getRateOfWaste();
+  double getKmPerOil();
 }

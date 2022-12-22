@@ -77,6 +77,37 @@ public final class RouteServiceGrpc {
     return getRemoveAddRouteToFavoriteMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.proto.prime.QueryFavRoutesResquest,
+      com.proto.prime.QueryFavRoutesResponse> getQueryFavRouteMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "QueryFavRoute",
+      requestType = com.proto.prime.QueryFavRoutesResquest.class,
+      responseType = com.proto.prime.QueryFavRoutesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.proto.prime.QueryFavRoutesResquest,
+      com.proto.prime.QueryFavRoutesResponse> getQueryFavRouteMethod() {
+    io.grpc.MethodDescriptor<com.proto.prime.QueryFavRoutesResquest, com.proto.prime.QueryFavRoutesResponse> getQueryFavRouteMethod;
+    if ((getQueryFavRouteMethod = RouteServiceGrpc.getQueryFavRouteMethod) == null) {
+      synchronized (RouteServiceGrpc.class) {
+        if ((getQueryFavRouteMethod = RouteServiceGrpc.getQueryFavRouteMethod) == null) {
+          RouteServiceGrpc.getQueryFavRouteMethod = getQueryFavRouteMethod =
+              io.grpc.MethodDescriptor.<com.proto.prime.QueryFavRoutesResquest, com.proto.prime.QueryFavRoutesResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "QueryFavRoute"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.proto.prime.QueryFavRoutesResquest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.proto.prime.QueryFavRoutesResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new RouteServiceMethodDescriptorSupplier("QueryFavRoute"))
+              .build();
+        }
+      }
+    }
+    return getQueryFavRouteMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -139,6 +170,13 @@ public final class RouteServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRemoveAddRouteToFavoriteMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void queryFavRoute(com.proto.prime.QueryFavRoutesResquest request,
+        io.grpc.stub.StreamObserver<com.proto.prime.QueryFavRoutesResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getQueryFavRouteMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -155,6 +193,13 @@ public final class RouteServiceGrpc {
                 com.proto.prime.RemoveRouteFromFavoriteRequest,
                 com.proto.prime.RemoveRouteFromFavoriteResponse>(
                   this, METHODID_REMOVE_ADD_ROUTE_TO_FAVORITE)))
+          .addMethod(
+            getQueryFavRouteMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.proto.prime.QueryFavRoutesResquest,
+                com.proto.prime.QueryFavRoutesResponse>(
+                  this, METHODID_QUERY_FAV_ROUTE)))
           .build();
     }
   }
@@ -188,6 +233,14 @@ public final class RouteServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRemoveAddRouteToFavoriteMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void queryFavRoute(com.proto.prime.QueryFavRoutesResquest request,
+        io.grpc.stub.StreamObserver<com.proto.prime.QueryFavRoutesResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getQueryFavRouteMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -216,6 +269,13 @@ public final class RouteServiceGrpc {
     public com.proto.prime.RemoveRouteFromFavoriteResponse removeAddRouteToFavorite(com.proto.prime.RemoveRouteFromFavoriteRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRemoveAddRouteToFavoriteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.proto.prime.QueryFavRoutesResponse queryFavRoute(com.proto.prime.QueryFavRoutesResquest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getQueryFavRouteMethod(), getCallOptions(), request);
     }
   }
 
@@ -248,10 +308,19 @@ public final class RouteServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRemoveAddRouteToFavoriteMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.proto.prime.QueryFavRoutesResponse> queryFavRoute(
+        com.proto.prime.QueryFavRoutesResquest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getQueryFavRouteMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_ADD_ROUTE_TO_FAVORITE = 0;
   private static final int METHODID_REMOVE_ADD_ROUTE_TO_FAVORITE = 1;
+  private static final int METHODID_QUERY_FAV_ROUTE = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -277,6 +346,10 @@ public final class RouteServiceGrpc {
         case METHODID_REMOVE_ADD_ROUTE_TO_FAVORITE:
           serviceImpl.removeAddRouteToFavorite((com.proto.prime.RemoveRouteFromFavoriteRequest) request,
               (io.grpc.stub.StreamObserver<com.proto.prime.RemoveRouteFromFavoriteResponse>) responseObserver);
+          break;
+        case METHODID_QUERY_FAV_ROUTE:
+          serviceImpl.queryFavRoute((com.proto.prime.QueryFavRoutesResquest) request,
+              (io.grpc.stub.StreamObserver<com.proto.prime.QueryFavRoutesResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -341,6 +414,7 @@ public final class RouteServiceGrpc {
               .setSchemaDescriptor(new RouteServiceFileDescriptorSupplier())
               .addMethod(getAddRouteToFavoriteMethod())
               .addMethod(getRemoveAddRouteToFavoriteMethod())
+              .addMethod(getQueryFavRouteMethod())
               .build();
         }
       }

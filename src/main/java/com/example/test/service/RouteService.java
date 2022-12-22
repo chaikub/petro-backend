@@ -15,7 +15,7 @@ import java.util.List;
 public class RouteService extends RouteServiceGrpc.RouteServiceImplBase {
     @Autowired
     private AccountRepository accountRepository;
-    boolean isSuccess = false;
+
 
     public FavRouteRest convertFavProtoToRestModel(Route favRoute){
         FavRouteRest favRouteRest = new FavRouteRest();
@@ -25,8 +25,22 @@ public class RouteService extends RouteServiceGrpc.RouteServiceImplBase {
         favRouteRest.setOil(favRoute.getOil());
         return favRouteRest;
     }
+    public List<Route> convertFavListProtoToRestModel(List<FavRouteRest> favRoute){
+        List<Route> favRoutes = new ArrayList<>();
+        for(FavRouteRest favRouteList: favRoute){
+            Route fav = Route.newBuilder()
+                    .setDistance(favRouteList.getDistance())
+                    .setDestination(favRouteList.getDestination())
+                    .setOil(favRouteList.getOil())
+                    .setStartName(favRouteList.getStartName())
+                    .build();
+            favRoutes.add(fav);
+        }
+        return favRoutes;
+    }
     @Override
     public void addRouteToFavorite(AddRouteToFavoriteRequest request, StreamObserver<AddRouteToFavoriteResponse> responseObserver) {
+        boolean isSuccess = false;
         try {
             System.out.println(request.getRoute());
             AccountEntity account = accountRepository.findByUsername(request.getUsername());
@@ -49,6 +63,7 @@ public class RouteService extends RouteServiceGrpc.RouteServiceImplBase {
 
     @Override
     public void removeAddRouteToFavorite(RemoveRouteFromFavoriteRequest request, StreamObserver<RemoveRouteFromFavoriteResponse> responseObserver) {
+        boolean isSuccess = false;
         try {
             System.out.println(request.getRoute());
             AccountEntity account = accountRepository.findByUsername(request.getUsername());
@@ -65,6 +80,26 @@ public class RouteService extends RouteServiceGrpc.RouteServiceImplBase {
         }
         RemoveRouteFromFavoriteResponse response = RemoveRouteFromFavoriteResponse.newBuilder()
                 .setIsSuccess(isSuccess)
+                .build();
+        responseObserver.onNext(response);
+        responseObserver.onCompleted();
+    }
+
+    @Override
+    public void queryFavRoute(QueryFavRoutesResquest request, StreamObserver<QueryFavRoutesResponse> responseObserver) {
+        List<Route> favRouteList = new ArrayList<>();
+        try {
+            System.out.println(request);
+            AccountEntity account = accountRepository.findByUsername(request.getUsername());
+            List<Route> favRoute = convertFavListProtoToRestModel(account.getFavRoute());
+            System.out.println(favRoute);
+            favRouteList = favRoute;
+
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        QueryFavRoutesResponse response = QueryFavRoutesResponse.newBuilder()
+                .addAllFavRoutes(favRouteList)
                 .build();
         responseObserver.onNext(response);
         responseObserver.onCompleted();

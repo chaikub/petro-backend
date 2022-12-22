@@ -20,6 +20,16 @@ public final class RouteOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_Route_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_QueryFavRoutesResquest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_QueryFavRoutesResquest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_QueryFavRoutesResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_QueryFavRoutesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_AddRouteToFavoriteRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -50,19 +60,23 @@ public final class RouteOuterClass {
     java.lang.String[] descriptorData = {
       "\n\013route.proto\"N\n\005Route\022\021\n\tstartName\030\001 \001(" +
       "\t\022\023\n\013destination\030\002 \001(\t\022\020\n\010distance\030\003 \001(\005" +
-      "\022\013\n\003oil\030\004 \001(\t\"D\n\031AddRouteToFavoriteReque" +
-      "st\022\020\n\010username\030\001 \001(\t\022\025\n\005route\030\002 \001(\0132\006.Ro" +
-      "ute\"/\n\032AddRouteToFavoriteResponse\022\021\n\tisS" +
-      "uccess\030\001 \001(\010\"I\n\036RemoveRouteFromFavoriteR" +
-      "equest\022\020\n\010username\030\001 \001(\t\022\025\n\005route\030\002 \001(\0132" +
-      "\006.Route\"4\n\037RemoveRouteFromFavoriteRespon" +
-      "se\022\021\n\tisSuccess\030\001 \001(\0102\300\001\n\014RouteService\022O" +
-      "\n\022AddRouteToFavorite\022\032.AddRouteToFavorit" +
-      "eRequest\032\033.AddRouteToFavoriteResponse\"\000\022" +
-      "_\n\030RemoveAddRouteToFavorite\022\037.RemoveRout" +
-      "eFromFavoriteRequest\032 .RemoveRouteFromFa" +
-      "voriteResponse\"\000B\023\n\017com.proto.primeP\001b\006p" +
-      "roto3"
+      "\022\013\n\003oil\030\004 \001(\t\"*\n\026QueryFavRoutesResquest\022" +
+      "\020\n\010username\030\001 \001(\t\"3\n\026QueryFavRoutesRespo" +
+      "nse\022\031\n\tfavRoutes\030\001 \003(\0132\006.Route\"D\n\031AddRou" +
+      "teToFavoriteRequest\022\020\n\010username\030\001 \001(\t\022\025\n" +
+      "\005route\030\002 \001(\0132\006.Route\"/\n\032AddRouteToFavori" +
+      "teResponse\022\021\n\tisSuccess\030\001 \001(\010\"I\n\036RemoveR" +
+      "outeFromFavoriteRequest\022\020\n\010username\030\001 \001(" +
+      "\t\022\025\n\005route\030\002 \001(\0132\006.Route\"4\n\037RemoveRouteF" +
+      "romFavoriteResponse\022\021\n\tisSuccess\030\001 \001(\0102\205" +
+      "\002\n\014RouteService\022O\n\022AddRouteToFavorite\022\032." +
+      "AddRouteToFavoriteRequest\032\033.AddRouteToFa" +
+      "voriteResponse\"\000\022_\n\030RemoveAddRouteToFavo" +
+      "rite\022\037.RemoveRouteFromFavoriteRequest\032 ." +
+      "RemoveRouteFromFavoriteResponse\"\000\022C\n\rQue" +
+      "ryFavRoute\022\027.QueryFavRoutesResquest\032\027.Qu" +
+      "eryFavRoutesResponse\"\000B\023\n\017com.proto.prim" +
+      "eP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -74,26 +88,38 @@ public final class RouteOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Route_descriptor,
         new java.lang.String[] { "StartName", "Destination", "Distance", "Oil", });
-    internal_static_AddRouteToFavoriteRequest_descriptor =
+    internal_static_QueryFavRoutesResquest_descriptor =
       getDescriptor().getMessageTypes().get(1);
+    internal_static_QueryFavRoutesResquest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_QueryFavRoutesResquest_descriptor,
+        new java.lang.String[] { "Username", });
+    internal_static_QueryFavRoutesResponse_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_QueryFavRoutesResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_QueryFavRoutesResponse_descriptor,
+        new java.lang.String[] { "FavRoutes", });
+    internal_static_AddRouteToFavoriteRequest_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_AddRouteToFavoriteRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AddRouteToFavoriteRequest_descriptor,
         new java.lang.String[] { "Username", "Route", });
     internal_static_AddRouteToFavoriteResponse_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_AddRouteToFavoriteResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AddRouteToFavoriteResponse_descriptor,
         new java.lang.String[] { "IsSuccess", });
     internal_static_RemoveRouteFromFavoriteRequest_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_RemoveRouteFromFavoriteRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RemoveRouteFromFavoriteRequest_descriptor,
         new java.lang.String[] { "Username", "Route", });
     internal_static_RemoveRouteFromFavoriteResponse_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_RemoveRouteFromFavoriteResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RemoveRouteFromFavoriteResponse_descriptor,

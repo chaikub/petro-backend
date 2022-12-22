@@ -2,8 +2,8 @@ package com.example.test.core;
 
 import com.example.test.command.rest.FavRouteRest;
 import com.proto.prime.FavRoute;
-import jakarta.persistence.Id;
 import lombok.Data;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;

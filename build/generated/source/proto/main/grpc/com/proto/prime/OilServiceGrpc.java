@@ -77,6 +77,37 @@ public final class OilServiceGrpc {
     return getRemoveFavOilMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.proto.prime.QueryFavOilRequest,
+      com.proto.prime.QueryFavOilResponse> getQueryFavOilMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "QueryFavOil",
+      requestType = com.proto.prime.QueryFavOilRequest.class,
+      responseType = com.proto.prime.QueryFavOilResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.proto.prime.QueryFavOilRequest,
+      com.proto.prime.QueryFavOilResponse> getQueryFavOilMethod() {
+    io.grpc.MethodDescriptor<com.proto.prime.QueryFavOilRequest, com.proto.prime.QueryFavOilResponse> getQueryFavOilMethod;
+    if ((getQueryFavOilMethod = OilServiceGrpc.getQueryFavOilMethod) == null) {
+      synchronized (OilServiceGrpc.class) {
+        if ((getQueryFavOilMethod = OilServiceGrpc.getQueryFavOilMethod) == null) {
+          OilServiceGrpc.getQueryFavOilMethod = getQueryFavOilMethod =
+              io.grpc.MethodDescriptor.<com.proto.prime.QueryFavOilRequest, com.proto.prime.QueryFavOilResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "QueryFavOil"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.proto.prime.QueryFavOilRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.proto.prime.QueryFavOilResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new OilServiceMethodDescriptorSupplier("QueryFavOil"))
+              .build();
+        }
+      }
+    }
+    return getQueryFavOilMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -139,6 +170,13 @@ public final class OilServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRemoveFavOilMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void queryFavOil(com.proto.prime.QueryFavOilRequest request,
+        io.grpc.stub.StreamObserver<com.proto.prime.QueryFavOilResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getQueryFavOilMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -155,6 +193,13 @@ public final class OilServiceGrpc {
                 com.proto.prime.RemoveOilFromFavoriteRequest,
                 com.proto.prime.RemoveOilFromFavoriteResponse>(
                   this, METHODID_REMOVE_FAV_OIL)))
+          .addMethod(
+            getQueryFavOilMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.proto.prime.QueryFavOilRequest,
+                com.proto.prime.QueryFavOilResponse>(
+                  this, METHODID_QUERY_FAV_OIL)))
           .build();
     }
   }
@@ -188,6 +233,14 @@ public final class OilServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRemoveFavOilMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void queryFavOil(com.proto.prime.QueryFavOilRequest request,
+        io.grpc.stub.StreamObserver<com.proto.prime.QueryFavOilResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getQueryFavOilMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -216,6 +269,13 @@ public final class OilServiceGrpc {
     public com.proto.prime.RemoveOilFromFavoriteResponse removeFavOil(com.proto.prime.RemoveOilFromFavoriteRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRemoveFavOilMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.proto.prime.QueryFavOilResponse queryFavOil(com.proto.prime.QueryFavOilRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getQueryFavOilMethod(), getCallOptions(), request);
     }
   }
 
@@ -248,10 +308,19 @@ public final class OilServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRemoveFavOilMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.proto.prime.QueryFavOilResponse> queryFavOil(
+        com.proto.prime.QueryFavOilRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getQueryFavOilMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_ADD_OIL_TO_FAVORITE = 0;
   private static final int METHODID_REMOVE_FAV_OIL = 1;
+  private static final int METHODID_QUERY_FAV_OIL = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -277,6 +346,10 @@ public final class OilServiceGrpc {
         case METHODID_REMOVE_FAV_OIL:
           serviceImpl.removeFavOil((com.proto.prime.RemoveOilFromFavoriteRequest) request,
               (io.grpc.stub.StreamObserver<com.proto.prime.RemoveOilFromFavoriteResponse>) responseObserver);
+          break;
+        case METHODID_QUERY_FAV_OIL:
+          serviceImpl.queryFavOil((com.proto.prime.QueryFavOilRequest) request,
+              (io.grpc.stub.StreamObserver<com.proto.prime.QueryFavOilResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -341,6 +414,7 @@ public final class OilServiceGrpc {
               .setSchemaDescriptor(new OilServiceFileDescriptorSupplier())
               .addMethod(getAddOilToFavoriteMethod())
               .addMethod(getRemoveFavOilMethod())
+              .addMethod(getQueryFavOilMethod())
               .build();
         }
       }

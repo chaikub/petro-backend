@@ -1,9 +1,8 @@
 package com.example.test.command;
 
-import com.example.test.command.rest.AccountCommandController;
 import com.example.test.command.rest.FavRouteRest;
+import com.example.test.command.rest.controller.AccountCommandController;
 import com.example.test.core.event.AccountCreateEvent;
-import com.proto.prime.FavRoute;
 import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.modelling.command.AggregateIdentifier;

@@ -10,6 +10,14 @@ message Route{
 
 }
 
+message QueryFavRoutesResquest{
+  string username = 1;
+}
+
+message QueryFavRoutesResponse{
+  repeated Route favRoutes = 1;
+}
+
 message AddRouteToFavoriteRequest {
   string username = 1;
   Route route = 2;
@@ -31,4 +39,5 @@ message RemoveRouteFromFavoriteResponse {
 service RouteService{
   rpc AddRouteToFavorite(AddRouteToFavoriteRequest) returns (AddRouteToFavoriteResponse){};
   rpc RemoveAddRouteToFavorite(RemoveRouteFromFavoriteRequest) returns (RemoveRouteFromFavoriteResponse){};
+  rpc QueryFavRoute(QueryFavRoutesResquest) returns (QueryFavRoutesResponse){};
 }

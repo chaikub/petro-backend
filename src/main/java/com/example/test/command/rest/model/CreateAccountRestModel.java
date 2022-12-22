@@ -1,5 +1,6 @@
 package com.example.test.command.rest.model;
 
+import com.example.test.command.rest.FavRouteRest;
 import com.proto.prime.FavRoute;
 import lombok.Data;
 

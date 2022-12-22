@@ -7,6 +7,13 @@ message AddOilToFavoriteRequest {
   string name = 2;
 }
 
+message QueryFavOilRequest{
+  string username = 1;
+}
+message QueryFavOilResponse{
+  repeated string name = 1;
+}
+
 message AddOilToFavoriteResponse {
   bool isSuccess = 1;
 }
@@ -23,4 +30,5 @@ message RemoveOilFromFavoriteResponse {
 service OilService{
   rpc AddOilToFavorite(AddOilToFavoriteRequest) returns (AddOilToFavoriteResponse){};
   rpc RemoveFavOil(RemoveOilFromFavoriteRequest) returns (RemoveOilFromFavoriteResponse){};
+  rpc QueryFavOil(QueryFavOilRequest) returns (QueryFavOilResponse){};
 }
